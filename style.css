@@ -13,13 +13,13 @@
         display: flex;
         justify-content: center;
         margin: 35px;
-        font-family: Georgia, serif;
+        font-family: serif;
       }
       .content {
         display: flex;
         justify-content: center;
         align-items: center;
-        font-family: Georgia, serif;
+        font-family: serif;
         margin-bottom: 100px;
       }
       table {
