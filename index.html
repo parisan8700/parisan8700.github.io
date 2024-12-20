@@ -1,12 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My personal page</title>
-</head>
-<body>
-  <h1>Hello</h1>
-  <h3>This page is my main page on GitHub</h3>
-</body>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My personal page</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <h1>My projects</h1>
+    <div class="content">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Written by</th>
+            <th>Address</th>
+          </tr>
+        </thead>
+        <tbody>
+          <td>tooltip</td>
+          <td>html css</td>
+          <td class="color-text">visit now</td>
+        </tbody>
+        <tbody>
+          <td class="text">send message</td>
+          <td class="text">html css</td>
+          <td class="text color-text">visit now</td>
+        </tbody>
+        <tbody>
+          <td>header</td>
+          <td>html css</td>
+          <td class="color-text">visit now</td>
+        </tbody>
+        <tbody>
+          <td class="text">search box</td>
+          <td class="text">html css</td>
+          <td class="text color-text">visit now</td>
+        </tbody>
+        <tbody>
+          <td>header</td>
+          <td>html css</td>
+          <td class="color-text">visit now</td>
+        </tbody>
+        <tbody>
+          <td class="text">bank card</td>
+          <td class="text">html css</td>
+          <td class="text color-text">visit now</td>
+        </tbody>
+        <tbody>
+          <td>Converter</td>
+          <td>html css js</td>
+          <td class="color-text">visit now</td>
+        </tbody>
+        <tbody>
+          <td class="text">passenger</td>
+          <td class="text">html css</td>
+          <td class="text color-text">visit now</td>
+        </tbody>
+        <tbody>
+          <td>todo list</td>
+          <td>html css js</td>
+          <td class="color-text">visit now</td>
+        </tbody>
+        <tbody>
+          <td class="text">input</td>
+          <td class="text">html css js</td>
+          <td class="text color-text">visit now</td>
+        </tbody>
+        <tbody>
+          <td>key code</td>
+          <td>html css js</td>
+          <td class="color-text">visit now</td>
+        </tbody>
+        <tbody>
+          <td class="text">modal</td>
+          <td class="text">html css js</td>
+          <td class="text color-text">visit now</td>
+        </tbody>
+        <tbody>
+          <td>typing</td>
+          <td>html css js</td>
+          <td class="color-text">visit now</td>
+        </tbody>
+        <tbody>
+          <td class="text">random text</td>
+          <td class="text">html css js</td>
+          <td class="text color-text">visit now</td>
+        </tbody>
+        <tbody>
+          <td>dark mode</td>
+          <td>html css js</td>
+          <td class="color-text">visit now</td>
+        </tbody>
+        <tbody>
+          <td class="text">your Weight</td>
+          <td class="text">html css js</td>
+          <td class="text color-text">visit now</td>
+        </tbody>
+        <tbody>
+          <td>theme</td>
+          <td>html css js</td>
+          <td class="color-text">visit now</td>
+        </tbody>
+        <tbody>
+          <td class="text">users</td>
+          <td class="text">html css js</td>
+          <td class="text color-text">visit now</td>
+        </tbody>
+      </table>
+    </div>
+
+    <script>
+      let button = document.querySelectorAll(".color-text");
+
+      button.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          console.log(btn);
+          window.location.href = "./practic h c/shop.html";
+        });
+      });
+    </script>
+  </body>
 </html>
+
