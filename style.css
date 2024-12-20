@@ -19,7 +19,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        font-family: cursive;
+        font-family: Georgia, serif;
         margin-bottom: 100px;
       }
       table {
