@@ -21,6 +21,8 @@
         align-items: center;
         font-family: serif;
         margin-bottom: 100px;
+        font-weight: 700;
+        font-size: large;
       }
       table {
         width: 80%;
