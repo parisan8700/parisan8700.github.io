@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
+
+      body {
+        font-family: sans-serif;
+        height: 100vh;
+        background-image: linear-gradient(315deg, #fff 0, #d7e1ec 50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .tooltip {
+        display: flex;
+        gap: 2rem;
+      }
+
+      span {
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 60px;
+        height: 60px;
+        border-radius: 100%;
+        font-size: 25px;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+        transition: all 0.4s cubic-bezier(0.68, -0.55, 0, 2.84);
+      }
+
+      .item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+
+      .text {
+        padding: 10px 18px;
+        border-radius: 25px;
+        position: absolute;
+        top: 11px;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+        z-index: 1;
+        opacity: 0;
+        transition: all 0.4s cubic-bezier(0.68, -0.55, 0, 2.84);
+      }
+
+      .text::before {
+        content: "";
+        width: 18px;
+        height: 18px;
+        display: inline-block;
+        position: absolute;
+        bottom: -3px;
+        left: 50%;
+        transform: translateX(-50%) rotate(45deg);
+        z-index: -1;
+      }
+
+      .item:hover .text {
+        opacity: 1;
+        pointer-events: visible;
+        top: -50px;
+      }
+      .tooltip .item:nth-child(1):hover span,
+      .tooltip .item:nth-child(1):hover .text,
+      .tooltip .item:nth-child(1):hover .text::before {
+        background-color: #3b5999;
+        color: #fff;
+      }
+      .tooltip .item:nth-child(2):hover span,
+      .tooltip .item:nth-child(2):hover .text,
+      .tooltip .item:nth-child(2):hover .text::before {
+        background-color: yellow;
+        color: #fff;
+      }
+      .tooltip .item:nth-child(3):hover span,
+      .tooltip .item:nth-child(3):hover .text,
+      .tooltip .item:nth-child(3):hover .text::before {
+        background-color: green;
+        color: #fff;
+      }
+      .tooltip .item:nth-child(4):hover span,
+      .tooltip .item:nth-child(4):hover .text,
+      .tooltip .item:nth-child(4):hover .text::before {
+        background-color: rgb(0, 255, 242);
+        color: #fff;
+      }
+      .tooltip .item:nth-child(5):hover span,
+      .tooltip .item:nth-child(5):hover .text,
+      .tooltip .item:nth-child(5):hover .text::before {
+        background-color: rgb(255, 115, 0);
+        color: #fff;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="tooltip">
+      <div class="item">
+        <div class="text">instagram</div>
+        <span>
+          <a href="#" class="fa fa-instagram"></a>
+        </span>
+      </div>
+      <div class="item">
+        <div class="text">facebook</div>
+        <span>
+          <a href="#" class="fa fa-facebook"></a>
+        </span>
+      </div>
+      <div class="item">
+        <div class="text">twitter</div>
+        <span>
+          <a href="#" class="fa fa-twitter"></a>
+        </span>
+      </div>
+      <div class="item">
+        <div class="text">google</div>
+        <span>
+          <a href="#" class="fa fa-google"></a>
+        </span>
+      </div>
+      <div class="item">
+        <div class="text">youtube</div>
+        <span>
+          <a href="#" class="fa fa-youtube"></a>
+        </span>
+      </div>
+    </div>
+  </body>
+</html>
