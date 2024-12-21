@@ -113,11 +113,14 @@
 
     <script>
       let button = document.querySelectorAll(".color-text");
+      let links = ["tooltip.html"]
+      let sum = 0
 
-      button.forEach(function (btn) {
-        btn.addEventListener("click", function () {
+      button.forEach((btn) =>{
+        btn.addEventListener("click",()=>{
           console.log(btn);
-          window.location.href = "./practic h c/shop.html";
+          window.location.href = links[sum];
+          sum++
         });
       });
     </script>
