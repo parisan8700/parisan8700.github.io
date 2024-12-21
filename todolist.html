@@ -1,0 +1,147 @@
+قسمت 145
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        background: #353f5b;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .container {
+        max-width: 400px;
+        margin-top: 90px;
+      }
+      .search i {
+        position: absolute;
+      }
+      .search {
+        position: relative;
+      }
+      .icon {
+        padding: 10px;
+        left: 0;
+      }
+      .input-field {
+        text-align: center;
+      }
+
+      input[type="text"],
+      input[type="text"]:focus {
+        color: #fff;
+        border: none;
+        background: rgba(0, 0, 0, 0.3);
+        max-width: 400px;
+      }
+      .todos li {
+        background: #423a6f;
+      }
+      .delete {
+        cursor: pointer;
+      }
+
+      .filtered {
+        display: none !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <ul class="list-group todos mx-auto text-light">
+        <li
+          class="list-group-item d-flex justify-content-between align-items-center"
+        >
+          <span>Do yoya</span>
+          <p>remove</p>
+        </li>
+        <li
+          class="list-group-item d-flex justify-content-between align-items-center"
+        >
+          <span>50 pushups</span>
+          <p>remove</p>
+        </li>
+        <li
+          class="list-group-item d-flex justify-content-between align-items-center"
+        >
+          <span>Read Book Novel</span>
+          <p>remove</p>
+        </li>
+      </ul>
+
+      <form class="add text-center my-4" autocomplete="off">
+        <label class="text-light"> Add New Todo... </label>
+        <input type="text" class="form-control m-auto" name="add" />
+      </form>
+    </div>
+
+    <script>
+      let $ = document;
+      let input = $.querySelector("input");
+      let addform = $.querySelector(".add");
+      let Todoelem = $.querySelector(".todos");
+
+      input.addEventListener("keydown", function (e) {
+        if (e.key === "Enter") {
+          e.preventDefault();
+
+          let newli = $.createElement("li");
+          newli.className =
+            "list-group-item d-flex justify-content-between align-items-center";
+
+          let newspan = $.createElement("span");
+          newspan.innerHTML = input.value;
+
+          let newP = $.createElement("p");
+          newP.innerHTML = "remove";
+
+          newP.addEventListener("click", function (event) {
+            event.target.parentElement.remove();
+          });
+
+          newli.append(newspan, newP);
+          Todoelem.append(newli);
+          input.value = "";
+        }
+      });
+
+      
+    </script>
+  </body>
+</html>
+<!-- function addtodo (newtodo){
+  let newli = $.createElement("li")
+  newli.className = "list-group-item d-flex justify-content-between align-items-center"
+
+  let newspan = $.createElement("span")
+  newspan.innerHTML = newtodo
+
+  let newtrash = $.createElement("i")
+  newtrash.className = "fa fa-trash-o delete"
+
+  newli.append(newspan,newtrash)
+
+  Todoelem.append(newli)
+}
+addform.addEventListener("submit" , function (event){
+  event.preventDefault()
+})
+
+
+input.addEventListener("keydown" , function (event){
+  let newtodo = event.target.value.trim()
+  
+  if (event.keyCode === 13){
+      if (newtodo){
+          addtodo(newtodo)
+      }
+  }
+}) -->

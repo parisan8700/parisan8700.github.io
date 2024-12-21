@@ -1,0 +1,94 @@
+<!-- تمرین قسمت 21 -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        background-color: aqua;
+      }
+      .form-container {
+        max-width: 400px;
+        margin: 77px auto;
+        padding: 20px;
+        background-color: #f5f5f5;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .form-container label {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      .form-container input[type="text"],
+      .form-container select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 15px;
+      }
+
+      .form-container input[type="submit"] {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .form-container input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <h2>فرم با ورودی‌های متنی و سلکت باکس</h2>
+      <form>
+        <label for="name">نام:</label>
+        <input type="text" id="name" name="name" />
+
+        <label for="email">ایمیل:</label>
+        <input type="text" id="email" name="email" />
+
+        <label for="country">کشور:</label>
+        <select id="country" name="country">
+          <option value="please select">انتخاب کنید</option>
+          <option value="iran">ایران</option>
+          <option value="usa">آمریکا</option>
+          <option value="uk">انگلستان</option>
+        </select>
+
+        <label for="gender">شهر:</label>
+        <select id="gender" name="gender">
+          <option value="male">انتخاب کنید</option>
+        </select>
+
+        <input type="submit" value="ارسال" />
+      </form>
+    </div>
+
+    <script src="./5.js"></script>
+  </body>
+</html>
+<!-- // let country = document.getElementById("country")
+// let gender = document.getElementById("gender")
+
+// let countryobg = {
+//     iran : ['tehran' , 'mashhad' , 'shomal'],
+//     usa : ["emrika" , "united" , "mangester"],
+//     uk : ["phortegal" , "valensiaga" , "shiago"]
+// }
+
+// country.addEventListener("change", function () {
+//     let countryy = country.value
+//     let countryobgg = countryobg[countryy]
+
+//     gender.innerHTML = ''
+//     countryobgg.forEach(function (city){
+//         gender.innerHTML += "<option>" + city + "</option>"
+//     })
+// }) -->

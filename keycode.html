@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <style>
+        * {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: IranSans
+}
+
+@font-face {
+	font-family: IranSans;
+	src: url(../fonts/IRANSansWeb.ttf);
+}
+
+body {
+	background: #d1d0d0;
+}
+
+#heading {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 60px;
+	height: 100px;
+}
+
+#heading h1 {
+	font-weight: bold;
+	font-size: 50px;
+}
+
+#ascii {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 100px;
+	color: rgb(100, 98, 98);
+}
+
+#infos {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.info-box {
+	text-align: center;
+	width: 20%;
+	border: 1px solid #ccc;
+}
+
+.info-box h3 {
+	background: #b9e9ff;
+	border-bottom: 2px solid #b9e9ff;
+	padding: 5px;
+	font-weight: bold;
+}
+
+.info-box h2 {
+	background: #fff;
+	padding: 5px;
+}
+
+#heading, #ascii, #infos {
+	display: none;
+}
+
+#starter {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 30px;
+	font-weight: bolder;
+	height: 100vh;
+}
+
+#starter #starter-text {
+	background: #fff;
+	padding: 10px;
+}
+    </style>
+  </head>
+
+  <body>
+
+    
+	<section id="starter">
+		<div id="starter-text">
+			Press any key to get the JavaScript event keycode
+		</div>
+	</section>
+
+	<div id="heading">
+		<h1>SabzLearn KeyCode</h1>
+	</div>
+
+	<div id="ascii">
+		<h1 id="keyCode"></h1>
+	</div>
+
+	<div id="infos">
+		<div class="info-box">
+			<h3>event.key</p>
+				<h2 id="key"></h2>
+		</div>
+
+		<div class="info-box">
+			<h3>event.location</p>
+				<h2 id="location"></h2>
+		</div>
+
+		<div class="info-box">
+			<h3>event.which</p>
+				<h2 id="which"></h2>
+		</div>
+
+		<div class="info-box">
+			<h3>event.code</p>
+				<h2 id="code"></h2>
+		</div>
+	</div>
+
+      
+    <script src="./haft.js"></script>
+  </body>
+</html>
+
