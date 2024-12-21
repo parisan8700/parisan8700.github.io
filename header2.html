@@ -4,7 +4,165 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>header modern</title>
-<link rel="stylesheet" href="./hd mo.css">
+
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color:black;
+}
+li{
+    list-style: none;
+}
+.dad-hed{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 200px;
+    margin-left: 200px;
+    padding-top: 30px;
+    font-family: sans-serif;
+    font-size: large;
+}
+.hed-right{
+    display: flex;
+    gap: 2.5rem;
+}
+.logo a{
+    font-weight: 1000;
+    color: #5c48ee;
+}
+a:hover{
+    color:#5c48ee
+}
+.re{
+    background-color: #5c48ee;
+    color: #fff;
+    border-radius: 5px;
+    padding: 0.25rem 1.25rem;
+}
+.re:hover{
+    color:#fff;
+    background: black;
+}
+.content-header{
+    display: grid;
+    /*grid-template-columns: repeat(2, 1fr);*/
+    grid-template-columns: 340px 585px;
+    margin: 171px;
+    gap: 5rem;
+}
+.im{
+    max-width: 300px;
+    transform: translateY(-48px);
+    border-radius: 10px;
+}
+.right-content{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+.left-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+h1{
+    line-height: 3rem;
+}
+.a{
+    font-weight: 400;
+}
+.b{
+    color: #0f1e6a;
+}
+.c{
+    color: #5c48f2;
+}
+p{
+    margin: 1rem 0;
+    word-spacing: 2.5px;
+}
+button{
+    border: none;
+    color: #fff;
+    background: #5c48f2;
+    white-space: nowrap;
+    padding: .6rem;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+}
+.in{
+    border: none;
+    background: #fff;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    font-size: 0.8rem;
+    width: 100%;
+}
+form{
+    display: flex;
+}
+.textt{
+    padding: .5rem .8rem;
+    width: 100%;
+    max-width: 310px;
+    border-radius: 10px;
+    background: linear-gradient(to right, rgba(92, 72, 238, 0.8),rgba(15,30,106,0.1));
+    backdrop-filter: blur(30px);
+    transform: translate(69%, -170%);
+}
+@media screen and (max-width:1024px){
+    .dad-hed{display: grid;
+        grid-template-columns: 206px 581px;
+        margin-left: 120px;}
+    .content-header{margin-left: 45px;
+                    gap:2rem}
+    
+}
+@media screen and (max-width:768px){
+    .dad-hed{margin-left: 108px;}
+   
+}
+@media screen and (max-width:425px){
+    .hed-right{display: none;}
+    .list-nav{
+    position: fixed;
+    left: 0;
+    background-color: #fff;
+    height: 100%;
+    top: 0;
+    width: 252px;
+    transform: translateX(-350px);}
+    #right:checked + ul {transform: translateX(0);}
+    .content-header{grid-template-columns: repeat(1, 1fr);}
+    .left-content{font-size: xx-large;
+        text-align: center;
+        margin-left: -12px;}
+    h1{line-height: 5rem;}
+    .dad-hed{grid-template-columns: 617px 100px;}
+    .nav-mobile{font-size: xx-large;}
+    .logo{font-size: xx-large;}
+    li{margin: 38px;}
+    .in{margin-left: 177px;
+        width: 304px;}
+    .right-content{grid-template-columns: repeat(1, 1fr);}
+    .lm{min-width: 437px;
+        margin-left: 277px;}
+    .im{max-width: 400px;}
+    .textt{backdrop-filter: blur(4px);
+        transform: translate(69%, -220%);
+        font-size: large;}
+
+}
+
+@media screen and (min-width:426px){
+    .nav-mobile{display: none;}
+}
+    </style>
 
 </head>
 <body>
@@ -84,8 +242,8 @@
             </form>
         </div>
         <div class="right-content">
-            <img src="./27-1.png" class="lm">
-            <img src="./27.jpg" class="im">
+            <img src="image2.png" class="lm">
+            <img src="image3.jpg" class="im">
             <div class="textt">
                 <ul>
                     <li>GET 30% OFF ON EVERY 1SET MONTH</li>
