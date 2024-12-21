@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+      }
+
+      body {
+        background: #f3f3f3;
+      }
+
+      header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 60px;
+        background-color: #eee;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      main .list {
+        width: 100%;
+        max-width: 768px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        margin-top: 25px;
+      }
+
+      main .list .item {
+        padding: 15px;
+        border-bottom: 1px solid #ccc;
+      }
+
+      main .list .item:last-of-type {
+        border-bottom: none;
+      }
+
+      main .list .item:hover {
+        background: rgba(0, 0, 0, 0.05);
+      }
+
+      .pagenumbers {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .pagenumbers button {
+        width: 50px;
+        height: 50px;
+
+        appearance: none;
+        border: none;
+        outline: none;
+        cursor: pointer;
+
+        background-color: #44aaee;
+
+        margin: 5px;
+        transition: 0.4s;
+
+        color: #fff;
+        font-size: 18px;
+        text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+      }
+
+      .pagenumbers button:hover {
+        background-color: #44eeaa;
+      }
+
+      .pagenumbers button.active {
+        background-color: #44eeaa;
+        box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.2);
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Users</h1>
+    </header>
+    <main>
+      <div class="list" id="list"></div>
+      <div class="pagenumbers" id="pagination"></div>
+    </main>
+
+    <script>
+      const listItems = [
+        { id: 1, name: "Amin", family: "Saeedi Rad" },
+        { id: 2, name: "Amir", family: "Zehtab" },
+        { id: 3, name: "Qadir", family: "Yolme" },
+        { id: 4, name: "Babak", family: "Mohammadi" },
+        { id: 5, name: "Hasan", family: "Ghahreman Zadeh" },
+
+        { id: 6, name: "Amin", family: "Saeedi Rad" },
+        { id: 7, name: "Amir", family: "Zehtab" },
+        { id: 8, name: "Qadir", family: "Yolme" },
+        { id: 9, name: "Babak", family: "Mohammadi" },
+        { id: 10, name: "Hasan", family: "Ghahreman Zadeh" },
+
+        { id: 11, name: "Saeed", family: "Ehsani" },
+        { id: 12, name: "Siamak", family: "Modiri" },
+        { id: 13, name: "Mohsen", family: "Ansari" },
+        { id: 14, name: "Mehran", family: "Ali Pour" },
+        { id: 15, name: "Amir Hossein", family: "Mahtabi" },
+
+        { id: 16, name: "Hossein", family: "Amino" },
+        { id: 17, name: "Melika", family: "Ehsani" },
+        { id: 18, name: "Qadir", family: "Yolme" },
+        { id: 19, name: "Fatemeh", family: "Alilou" },
+        { id: 20, name: "Ehsan", family: "Tayyebi" },
+
+        { id: 21, name: "Zahra", family: "Gholami" },
+        { id: 22, name: "Matin", family: "Sahebi" },
+      ];
+
+      let userListContainer = document.querySelector("#list");
+      let paginationContainer = document.querySelector("#pagination");
+
+      let currentPage = 1;
+      let rowsCount = 5;
+
+      displayUesrsList(listItems, userListContainer, rowsCount, currentPage);
+      displaybutton(listItems, paginationContainer, rowsCount);
+
+      function displayUesrsList(
+        listItems,
+        userListContainer,
+        rowsCount,
+        currentPage
+      ) {
+        userListContainer.innerHTML = "";
+        let end = currentPage * rowsCount; // 20 - 5 = 15
+        let start = end - rowsCount;
+
+        let all = listItems.slice(start, end);
+
+        all.forEach(function (user) {
+          let userelement = document.createElement("div");
+          userelement.innerHTML = user.name + " " + user.family;
+          userelement.classList.add("item");
+          //console.log(userelement)
+
+          userListContainer.append(userelement);
+        });
+      }
+
+      function displaybutton(listItems, paginationContainer, rowsCount) {
+        paginationContainer.innerHTML = "";
+        let mainbtn = Math.ceil(listItems.length / rowsCount);
+
+        for (let i = 1; i < mainbtn + 1; i++) {
+          console.log(i);
+          pagebutton(i);
+        }
+      }
+
+      function pagebutton(i) {
+        let button = document.createElement("button");
+        button.innerHTML = i;
+        paginationContainer.append(button);
+
+        if (i === currentPage) {
+          button.classList.add("active");
+        }
+
+        button.addEventListener("click", function () {
+          currentPage = i;
+          displayUesrsList(
+            listItems,
+            userListContainer,
+            rowsCount,
+            currentPage
+          );
+
+          let page = document.querySelector("button.active");
+          page.classList.remove("active");
+
+          button.classList.add("active");
+        });
+        return button;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--Google Font-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      *,
+      *:before,
+      *:after {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        height: 100vh;
+        background: linear-gradient(135deg, #61d954, #2ebf75);
+      }
+
+      .container {
+        background-color: #ffffff;
+        padding: 40px 30px;
+        width: 50%;
+        min-width: 400px;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        border-radius: 5px;
+        font-family: "Poppins", sans-serif;
+        box-shadow: 25px 25px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      .row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 40px;
+      }
+
+      .row span {
+        font-weight: 500;
+      }
+
+      input[type="range"] {
+        width: 70%;
+        height: 3.5px;
+        -webkit-appearance: none;
+        appearance: none;
+        background-color: #dcdcdc;
+        border-radius: 3px;
+        outline: none;
+      }
+
+      input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        height: 15px;
+        width: 15px;
+        background-color: #1c1c1c;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+
+      #result {
+        font-size: 30px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-align: center;
+        color: #0be881;
+      }
+
+      #category {
+        font-size: 18px;
+        text-align: center;
+        letter-spacing: 1px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <input type="range" min="20" max="200" value="20" id="weight" />
+        <span id="weight-val">20 kg</span>
+      </div>
+      <div class="row">
+        <input type="range" min="100" max="250" value="100" id="height" />
+        <span id="height-val">100 cm</span>
+      </div>
+
+      <p id="result">20.0</p>
+      <p id="category">Normal weight</p>
+    </div>
+
+    <script>
+      let $ = document;
+
+      let weight = $.querySelector("#weight");
+      let height = $.querySelector("#height");
+      let weightval = $.querySelector("#weight-val");
+      let heightval = $.querySelector("#height-val");
+      let result = $.querySelector("#result");
+      let category = $.querySelector("#category");
+
+      weight.addEventListener("input", main);
+      height.addEventListener("input", main);
+
+      function main() {
+        let weightinput = (weightval.innerHTML = weight.value);
+        let heightinput = (heightval.innerHTML = height.value);
+
+        let bmiValue = (weightinput / Math.pow(heightinput / 100, 2)).toFixed(
+          1
+        );
+        result.innerHTML = bmiValue;
+
+        if (bmiValue < 18.5) {
+          // کم وزنی
+          category.innerHTML = "UnderWeight";
+          result.style.color = "#ffc44d";
+        } else if (bmiValue >= 18.5 && bmiValue <= 24.9) {
+          // نرمال هست
+          categor.innerHTML = "Normal Weight";
+          result.style.color = "#0be881";
+        } else if (bmiValue >= 25 && bmiValue < 29.9) {
+          // اضافه وزن
+          categor.innerHTML = "OverWeight";
+          result.style.color = "#ff884d";
+        } else {
+          // چاق
+          category.innerHTML = "Obese";
+          result.style.color = "#ff5e4d";
+        }
+      }
+    </script>
+  </body>
+</html>
