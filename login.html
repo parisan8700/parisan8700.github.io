@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #e4ebf5;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .user {
+            width: 283px;
+            height: 400px;
+            background: #e4ebf5;
+            border-radius: 36px;
+            box-shadow: 5px 5px 7px #c8d0e7, -2px -2px 3px #fff;
+            padding: 25px 15px;
+        }
+
+        .group {
+            display: grid;
+            gap: 4rem;
+        }
+
+        img {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            margin: 19px 107px;
+            box-shadow: inset 5px 5px 7px #c8d0e7, inset -2px -2px 3px #fff;
+            margin-top: 35px;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        input {
+            display: grid;
+            height: 40px;
+            border: none;
+            margin-right: 10px;
+            background-color: #e4ebf5;
+            box-shadow: inset 5px 5px 7px #c8d0e7, inset -2px -2px 3px #fff;
+            border-radius: 9px;
+            padding: 1rem;
+        }
+
+        input:active,
+        input:focus {
+            outline: 0;
+        }
+
+        .user-input {
+            display: grid;
+            gap: 1rem;
+        }
+
+        button {
+            padding: 13px;
+            font-weight: 700;
+            background-image: linear-gradient(to right, #66a1ff, #2f6dce);
+            box-shadow: 5px 5px 7px #c8d0e7, -2px -2px 3px #fff;
+            color: #fff;
+            cursor: pointer;
+            height: 40px;
+            border: none;
+            margin-right: 10px;
+            border-radius: 9px;
+            animation: bg 3s ease-in-out infinite;
+            background-size: 400% 400%;
+        }
+
+        @keyframes bg {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+
+        .inputemail,.inputpassword {
+            color: red;
+            display: none;
+        }
+
+
+        span {
+            display: none;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="user">
+        <div class="group">
+            <img src="./icon-2.png">
+            <div class="user-input">
+                <input type="email" name="user-input" placeholder="Email" class="email-input" onblur="ky()">
+                <span class="span-text">must contain 8 chracter</span>
+                <input type="password" name="user-input" placeholder="Password" class="password-input" onblur="kyy()">
+                <span class="span-password">must contain 8 chracter</span>
+                <button>Send</button>
+
+            </div>
+        </div>
+        
+    </div>
+
+    
+    <script>
+
+        let span1 = document.querySelector(".span-text")
+        let span2 = document.querySelector(".span-text")
+        let input1 = document.querySelector(".email-input")
+        let input2 = document.querySelector(".password-input")
+
+        
+        function ky(){
+            if(input1.value.length < 8){
+            span1.style.display = "block"
+        }else{
+            span1.style.display = "none"
+        }
+        }
+
+
+        function kyy(){
+            if(input2.value.length < 8){
+            span2.style.display = "block"
+        }else{
+            span2.style.display = "none"
+        }}
+        
+           
+     
+
+
+    </script>
+
+</body>
+
+</html>
