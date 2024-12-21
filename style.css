@@ -55,6 +55,9 @@
       table thead tr th:last-child {
         border-top-right-radius: 25px;
       }
+      .border-text {
+        border-bottom-right-radius: 25px;
+      }
       .q {
         border-bottom-left-radius: 25px;
       }
