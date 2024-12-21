@@ -121,12 +121,13 @@
       let links = ["tooltip.html","send.html","Header.html","search2.html","header2.html","bank.html","login.html","converter.html",
                    "passenger.html","todolist.html","input.html","keycode.html","modal.html","typing.html","randomtext.html",
                    "darkmode.html","yourweight.html","theme.html","users.html"]
-
-      links.forEach((link, index) => {
-        if(index < button.length){
-          location.href = link
-        }
-      })
+      
+      // links.forEach((link, index) => {
+        
+      //   if(index < button.length){
+      //     location.href = link
+      //   }
+      // })
       
       // let sum = 0
 
@@ -137,6 +138,14 @@
       //     sum++
       //   });
       // });
+
+       button.forEach((btn, index) =>{
+        btn.addEventListener("click",()=>{
+          if(links[index]){
+            window.location.href = links[index];
+          }
+        });
+      });
     </script>
   </body>
 </html>
